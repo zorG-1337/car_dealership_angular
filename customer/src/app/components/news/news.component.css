@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+* {
+    font-family: 'Goldman', sans-serif;
+}
+
+h1, .createNews {
+    font-family: 'Goldman', sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.createNews, .editNews, .deleteNews {
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.header {
+    display: flex;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.news {
+    background-color: #f4f4f4;
+    width: 1000px;
+    border: 1px solid #000;
+    margin-bottom: 40px;
+    padding: 40px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.additionalInfo {
+    display: flex;
+    gap: 600px;
+    margin-top: 60px;
+    color: rgb(51, 49, 49);
+}
+
+.newsBody {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.newsHeader {
+    text-align: center;
+}
+
+.editNewsButtons {
+    margin-top: 30px;
+    display: flex;
+    gap: 60px;
+}

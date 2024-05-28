@@ -1,0 +1,28 @@
+const express = require("express");
+const bodyParser = require("body-parser")
+const authRoutes = require("./routes/auth")
+const user_infoRoutes = require("./routes/user_info")
+const update_user = require("./routes/update")
+const create_car = require('./routes/cars')
+const testdrive = require('./routes/testdrive')
+const bought_cars = require('./routes/bought_cars')
+const news = require('./routes/news.js')
+const mongoose = require("mongoose")
+const keys = require("./config/keys")
+const app = express();
+mongoose.connect(keys.mongoURI).then(() => {
+    console.log("MongoDB was connected!")
+}).catch((err) => console.log(err))
+app.use(require('morgan')('dev'))
+app.use(require('cors')())
+app.use('/uploads', express.static('uploads'))
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+app.use('/api/auth', authRoutes)
+app.use('/api/user_info', user_infoRoutes)
+app.use('/api/update', update_user)
+app.use('/api/testdrive', testdrive)
+app.use('/api/cars', create_car)
+app.use('/api/bought_cars', bought_cars)
+app.use('/api/news', news)
+module.exports = app

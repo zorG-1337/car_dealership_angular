@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="register-page">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input type="name" matInput formControlName="name" placeholder="Gosha">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Surname</mat-label>
+            <input type="surname" matInput formControlName="surname" placeholder="Rubchinskiy">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="...........">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Phone Number</mat-label>
+            <input type="phoneNumber" matInput formControlName="phoneNumber" placeholder="+7(...)...-..-.." [imask]="phoneMask">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>City</mat-label>
+            <input type="city" matInput formControlName="city" placeholder="Ebenya city">
+        </mat-form-field>
+        <button class="button" mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid">Register</button>
+    </form>
+</div>
+
+
+
+    
+
+
+  
+  

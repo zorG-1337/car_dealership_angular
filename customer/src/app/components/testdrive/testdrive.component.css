@@ -1,0 +1,10 @@
+.thisForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btns {
+    display: flex;
+    gap: 65px;
+}

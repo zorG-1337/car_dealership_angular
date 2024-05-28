@@ -1,0 +1,19 @@
+<form class="thisForm" [formGroup]="myForm">
+    <h2 mat-dialog-title>Добавить новость: </h2>
+    <mat-dialog-content class="input_fields">
+        <mat-form-field class="example-semi-full-width">
+            <mat-label>Input header</mat-label>
+            <input matInput placeholder="Discounts, Sales" formControlName="header">
+          </mat-form-field>
+        
+          <mat-form-field class="example-full-width">
+            <mat-label>Input news</mat-label>
+            <textarea matInput placeholder="News BMW series is now available..." formControlName="body"></textarea>
+          </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions class="btns">
+        <button mat-flat-button color="primary" [disabled]="myForm.invalid" (click)="editNews()">Edit News</button>
+        <button mat-flat-button color="primary" (click)="closeForm()">Cancel</button>
+    </mat-dialog-actions>
+</form>
+

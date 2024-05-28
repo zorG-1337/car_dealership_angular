@@ -1,0 +1,31 @@
+<app-header></app-header>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<div class="container">
+    <h1>My Purchases: </h1>
+    <div class="results" *ngFor="let car of getUserPurchases()">
+        <div class="upper-block">
+            <div class="image">
+            <img src="../../../assets/{{car.image}}">
+            </div>
+            <div class="info">
+                <span>Brand: {{car.brand}}</span><br>
+                <span>Model: {{car.model}}</span><br>
+                <span>Year: {{car.yearOfRelease}}</span><br>
+                <span>Color: {{car.color}}</span><br>
+                <span>Date of purchase: {{car.date}}</span><br>
+                <span>Price: {{car.price}}<span style="color: green">tg</span></span><br>
+            </div>
+        </div>
+        <div class="feedback">
+            <span>Leave your feedback: </span>
+            <div class="leaveFeedback" *ngIf="car.usersFeedback === 0">
+                <div class="rate">
+                    <div class="rate-item" (click)="leaveFeedback(1)"><i class='bx bx-star'></i></div>
+                    <div class="rate-item" (click)="leaveFeedback(2)"><i class='bx bx-star'></i></div>
+                    <div class="rate-item" (click)="leaveFeedback(3)"><i class='bx bx-star'></i></div>
+                    <div class="rate-item" (click)="leaveFeedback(4)"><i class='bx bx-star'></i></div>
+                    <div class="rate-item" (click)="leaveFeedback(5)"><i class='bx bx-star'></i></div>
+                </div> 
+            </div>
+        </div>
+</div>

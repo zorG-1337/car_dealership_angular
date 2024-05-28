@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="login-page">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="...........">
+        </mat-form-field>
+        <button class="button" mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid">Login</button>
+    </form>
+</div>

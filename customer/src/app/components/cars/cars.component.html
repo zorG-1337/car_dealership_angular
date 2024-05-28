@@ -1,0 +1,102 @@
+<app-header></app-header>
+<div class="car-search-panel">
+  <div class="header">
+    <span class="headerSpan">Choose a car you wish!</span>
+    <!-- 
+      <button mat-flat-button color="primary" class="createCar" [hidden]="isHidden">Create Car</button>
+    -->
+    <button mat-flat-button color="primary" class="createCar" (click)="openDialog()" [hidden]="isHidden">Create Car</button>
+  </div>
+   <form class="selections-fields" [formGroup]="myForm">
+    <mat-form-field class="selection">
+      <mat-label>Select Brand</mat-label>
+      <mat-select (selectionChange)="changeClient($event.value)" formControlName="brand">
+        <mat-option value="BMW">BMW</mat-option>
+        <mat-option value="Toyota">Toyota</mat-option>
+        <mat-option value="Mercedes">Mercedes</mat-option>
+        <mat-option value="Audi">Audi</mat-option>
+        <mat-option value="VAZ">VAZ</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="selection">
+      <mat-label>Select Model</mat-label>
+      <mat-select formControlName="model" [attr.disabled]="getBrand() == null">
+        <mat-option *ngFor="let number of getCarsByBrand()" value="{{number}}">{{number}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="selection">
+      <mat-label>Select Color</mat-label>
+      <mat-select formControlName="color">
+        <mat-option value="Black">Black</mat-option>
+        <mat-option value="Red">Red</mat-option>
+        <mat-option value="Cherry">Cherry</mat-option>
+        <mat-option value="White">White</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="selection">
+      <mat-label>Select Drive</mat-label>
+      <mat-select formControlName="drive">
+        <mat-option value="Back">Back</mat-option>
+        <mat-option value="Front">Front</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="rudder">
+      <mat-label>Select Rudder</mat-label>
+      <mat-select formControlName="rudder">
+        <mat-option value="Left">Left side</mat-option>
+        <mat-option value="Right">Right Side</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-flat-button color="primary" class="searchButton" (click)="searchCars()" [disabled]="myForm.invalid">Search</button>
+  </form>
+   <div class="check" *ngIf="foundCars != []">
+      <div class="results" *ngFor="let car of foundCars">
+        <div class="image">
+          <img src="../../../assets/{{car.image}}">
+          <div class="buttons">
+            <button mat-flat-button color="primary" (click)="addToUserCart(car._id)" [hidden]="NoLogin" class="addToCart">Add to cart</button>
+            <button mat-flat-button color="primary" class="deleteCar" (click)="deleteCar(car._id)" [hidden]="isHidden">Delete Position</button>
+            <button mat-flat-button color="primary" class="testDrive" [hidden]="NoLogin" (click)="openDialogTestDrive(car._id)">Sign up for a test drive</button>
+            <a class="loginToAddToCart" [hidden]="!NoLogin" routerLink="/login">Login to add this car to cart</a>
+          </div>
+          </div>
+        <div class="info">
+            <span>Brand: {{car.brand}}</span><br>
+            <span>Model: {{car.model}}</span><br>
+            <span>Year: {{car.yearOfRelease}}</span><br>
+            <span>Color: {{car.color}}</span><br>
+            <span>Engine: {{car.engine}} <span style="color: red">HP</span></span><br>
+            <span>Drive: {{car.drive}}</span><br>
+            <span>Rudder: {{car.rudder}}</span><br>
+            <span>Price: {{car.price}}<span style="color: green">tg</span></span><br>
+        </div>
+      </div>
+    </div>
+    <div class="check2" *ngIf="foundCars.length === 0">
+      <p>No Results. Input params or choice another category.</p>
+    </div>
+    
+</div>
+
+<!--
+<mat-card class="example-card" *ngFor="let product of products">
+        <mat-card-header>
+          <mat-card-title>{{product.title}}</mat-card-title>
+        </mat-card-header>
+        <img class="image" mat-card-image src="{{product.image}}">
+        <mat-card-content>
+          <p>Price: {{product.price | currency:"EUR"}}</p>
+          <p>Year: {{product.year}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="button" mat-button color="primary">В корзину</button>
+            <button class="button" mat-button color="primary" routerLink="/product/{{product.id}}">Подробнее</button>
+            <button mat-button [matMenuTriggerFor]="menu" color="primary">Ред.</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="deleteItem(product.id)" >Удалить</button>
+              <button mat-menu-item>Ред.</button>
+            </mat-menu>
+        </mat-card-actions>
+      </mat-card>
+-->
+

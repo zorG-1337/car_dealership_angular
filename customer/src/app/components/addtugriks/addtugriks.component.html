@@ -1,0 +1,13 @@
+<form class="thisForm" [formGroup]="myForm">
+    <h2 mat-dialog-title>Введите количство тугриков, которое вы хотите добавить</h2>
+    <mat-dialog-content class="input_fields">
+        <mat-form-field>
+            <mat-label>Тугрики</mat-label>
+            <input matInput formControlName="value">
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions class="btns">
+        <button mat-flat-button color="primary" (click)="AddTugriks()" style="width: 90px;" [disabled]="myForm.invalid">Add</button>
+        <button mat-flat-button color="primary" (click)="closeForm()">Cancel</button>
+    </mat-dialog-actions>
+</form>

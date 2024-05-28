@@ -1,0 +1,40 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <div class="container">
+        <header>
+            <div class="name">
+                <a routerLink=""><span class="spanUfa">Ufa</span><br><span class="spanAuto">Auto</span><br><span class="spanDistributor">Distributor</span></a>
+            </div>
+            <div class="contacts">
+                <p>+7 (937) 472-75-72</p>
+                <p class="adress">Russia, Ufa, 228 Mendeleev St. 493936</p>
+            </div>
+            <div class="web-contacts">
+                <div class="vk"><a href="https://vk.com/pol1shcow"><i class='bx bxl-vk'></i></a>  
+                </div>
+                <div class="telegram">
+                    <a href="https://t.me/kolbaster_sosisterrr"><i class='bx bxl-telegram' ></i></a>
+                </div>
+                <div class="youtube">
+                    <a href="https://www.youtube.com/channel/UC6AnsK_52H8cgUqqqHBxCFw"><i class='bx bxl-youtube' ></i></a>
+                </div>
+            </div>
+        </header>
+        <div class="navigation">
+            <div class="navs">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a routerLink="about_us">About Us</a></li>
+                    <li><a routerLink="feedbacks">Feedbacks</a></li>
+                    <li><a routerLink="news">News</a></li>
+                    <li><a routerLink="cars">Choose a car</a></li>
+                </ul>    
+            </div>
+            <div class="login-register-buttons">
+                <button mat-flat-button class="login" color="basic" [hidden]="!isHidden" routerLink="login" class="login">Login</button>
+                <button mat-flat-button class="register" color="basic" [hidden]="!isHidden" routerLink="register" class="register">Register</button>
+                <button mat-flat-button class="logout" color="basic" [hidden]="isHidden" routerLink="profile" class="profile">My Profile</button>
+                <button mat-flat-button class="logout" color="basic" [hidden]="isHidden" (click)="logout()" class="logout">Logout</button>
+            </div>
+        </div>
+    </div>
+

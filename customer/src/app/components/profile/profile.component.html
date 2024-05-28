@@ -1,0 +1,27 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<app-header></app-header>
+<div class="profile">
+    <div class="upper-profile-side">
+        <div class="image">
+            <img class="profile-image" src={{user?.image}}>
+        </div>
+        <div class="buttons">
+            <button mat-flat-button color="primary" class="changeUserInfo" (click)="openDialog()">Edit Info</button>
+            <button mat-flat-button color="primary" class="changePassword" (click)="openDialogForPasswordChanging()">Change Password</button>
+            <button mat-flat-button color="primary" class="cart" routerLink="cart"><i class='bx bx-cart'></i>Cart</button>
+            <button mat-flat-button color="primary" class="purchaseHistory" routerLink="purchase-history">Purchase history</button>
+            <button mat-flat-button color="primary" class="userPurchases" [hidden]="!accessToPurchases" routerLink="admin-user-purchases">Purchases of users</button>
+            <button mat-flat-button color="primary" class="testDrives" [hidden]="!accessToPurchases" routerLink="/test-drive-requests">Sign Ups for Test Drive</button>
+            <button mat-flat-button color="primary" class="myTestDrives" routerLink="my-test-drives">My Sign Ups for Test Drive</button>
+            <button mat-flat-button color="primary" class="addTugriks" (click)="openDialogToAddTugriks()">Pop up balance</button>
+            <button mat-flat-button color="primary" class="photoChange"><label class="custom-file-upload">
+                <input type="file" (change)="onFileSelected($event)"/>
+                Change profile photo
+            </label></button>
+        </div>
+    </div>
+    <div class="lower-profile side">
+        <p><span class="hello">Hello,</span>{{user?.name}} {{user?.surname}}</p>
+        <span style="font-size: 20px;">Your Balance: {{user?.balance}} <span style="color: green">tg</span></span>
+    </div>
+</div>

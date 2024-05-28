@@ -1,0 +1,18 @@
+<form class="thisForm" [formGroup]="myForm">
+  <h2 mat-dialog-title>Input new info about you</h2>
+    <mat-dialog-content class="input_fields">
+      <mat-form-field>
+        <input matInput placeholder="name" formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="surname" formControlName="surname">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="city" formControlName="city">
+      </mat-form-field>
+    </mat-dialog-content>
+  <mat-dialog-actions class="btns">
+    <button mat-flat-button color="primary" (click)="sendForm()">Send</button>
+    <button mat-flat-button color="primary" (click)="closeForm()">Cancel</button>
+  </mat-dialog-actions>
+</form>

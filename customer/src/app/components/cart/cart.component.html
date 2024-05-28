@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="cart">
+    <div class="header"><h1>Your cart:</h1></div>
+    <div class="check" *ngIf="getCart() !== []">
+        <div class="results" *ngFor="let car of getCart()">
+        <div class="image">
+            <img src="../../../assets/{{car.image}}">
+            <div class="buttons">
+            <button mat-flat-button color="primary" (click)="buyCar([car._id, car.price, car])">Buy</button>
+            <button mat-flat-button color="primary" (click)="deleteFromCart(car._id)">Delete from cart</button>
+            </div>
+        </div>
+        <div class="info">
+            <span>Brand: {{car.brand}}</span><br>
+            <span>Model: {{car.model}}</span><br>
+            <span>Year: {{car.yearOfRelease}}</span><br>
+            <span>Color: {{car.color}}</span><br>
+            <span>Engine: {{car.engine}} <span style="color: red">HP</span></span><br>
+            <span>Drive: {{car.drive}}</span><br>
+            <span>Rudder: {{car.rudder}}</span><br>
+            <span>Price: {{car.price}}<span style="color: green">tg</span></span><br>
+        </div>
+        </div>
+    </div>
+    <div class="check2" *ngIf="getCart() === []">
+        <span>Your cart is empty</span>
+    </div>
+</div>

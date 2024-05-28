@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+* {
+    font-family: 'Goldman', sans-serif;
+}
+.hello {
+    font-size: 30px;
+}
+.changeUserInfo, .changePassword, .cart, .photoChange, .userPurchases, .testDrives, 
+.myTestDrives, .addTugriks, .purchaseHistory {
+    width: 200px;
+    border-radius: 30px;
+    height: 40px;
+}
+
+
+p {
+    font-size: 30px;
+}
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 40%;
+}
+.profile {
+    width: 100vw;
+    height: 100vh;
+    margin-left: 50px;
+}
+.upper-profile-side {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    margin-top: 170px;
+    margin-bottom: 60px;
+    margin-left: 10px;
+    gap: 200px;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 40px;
+}
+.photoChange {
+    height: 50px;
+}
+input[type="file"] {
+    display: none;
+}

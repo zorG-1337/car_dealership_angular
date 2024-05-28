@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="header">
+        <div class="pageName">
+            <h1>News: </h1>
+        </div>
+        <div class="adminButtons">
+            <button mat-flat-button color="primary" class="createNews" (click)="openDialogToCreateNews()" [hidden]="hideButtons">Create news</button>
+        </div>
+    </div>
+    @for (news of availableNews; track news; let  i = $index) { 
+    <div class="news">     
+            <div class="newsHeader">
+                {{news.header}}
+            </div>
+            <div class="newsBody">
+                {{news.body}}
+            </div>
+            <div class="additionalInfo">
+                <div class="auhor">
+                    <span>Author: <br></span>
+                    {{news.authorName}} {{news.authorSurname}}
+                </div>
+                <div class="dateOfNews">
+                    <span>Date: <br></span>
+                    {{news.date}}
+                </div>
+            </div>
+            <div class="editNewsButtons">
+                <button mat-flat-button color="primary" class="editNews" [hidden]="hideButtons" (click)="openDialogToEditNews(news._id)">Edit news</button>
+                <button mat-flat-button color="primary" class="deleteNews" [hidden]="hideButtons" (click)="deleteNews(news._id)">Delete news</button>
+            </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Goldman', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.container {
+    width: 100vw;
+    height: 198px;
+}
+.name {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.name a {
+    display: flex;
+    flex-direction: column;
+    gap: -6px;
+}
+.container .web-contacts {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    gap: 20px
+}
+.container header {
+    background-color: rgb(29,37,44);
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-around;
+    height: 149px;
+    align-items: center;
+}
+.spanAuto {
+    color: rgba(247,247,247,255);
+}
+header .web-contacts i {
+    color: #3e1e1e;
+    border: 1px solid #000000;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 150px;
+    font-weight: 600;
+}
+.web-contacts i {
+    padding: 5px;
+}
+.web-contacts .youtube i:hover {
+    color: rgb(255,0,0);
+    background-color: #fff;
+    cursor: pointer;
+}
+.spanUfa {
+    color: rgba(0,108,246,255);
+}
+.web-contacts .vk i:hover {
+    color: #fff;
+    background-color: rgb(0,119,255);
+    cursor: pointer;
+}
+.web-contacts .telegram i:hover {
+    color: #fff;
+    background-color: rgb(29,148,207);
+    cursor: pointer;
+}
+.adress {
+    color: rgb(135, 169, 217);
+}
+.navigation {
+    background-color: rgb(227,227,227);
+    height: 49px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navs ul{
+    width: 940px;
+    display: flex;
+    justify-content: space-around;
+    padding: 13px 15px;
+    color: rgb(0,0,73);
+}
+li {
+    list-style: none;
+}
+.navs ul li a{
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+/*
+.navs ul li:nth-child(1) a{
+    color: #fff;
+    background-color: rgb(40,56,71);
+    border-radius: 5px;
+}
+*/
+.navs ul li a:hover {
+    color: #fff;
+    background-color: rgb(40,56,71);
+    border-radius: 5px;
+}
+.reg {
+    padding-right: 40px;
+}
+.login-register-buttons {
+    margin-left: 60px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.register {
+    padding: 8px;
+}
+.profile {
+    padding: 8px;
+}
+.spanDistributor {
+    color: rgba(0,108,0,255);
+}
+

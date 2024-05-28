@@ -1,0 +1,41 @@
+<form class="thisForm" [formGroup]="myForm">
+    <h2 mat-dialog-title>Car creation. Fill all fields.</h2>
+      <mat-dialog-content class="input_fields">
+        <mat-form-field>
+          <input matInput placeholder="brand" formControlName="brand">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="model" formControlName="model">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="color" formControlName="color">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="year of release" formControlName="yearOfRelease">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="drive" formControlName="drive">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="engine" formControlName="engine">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="rudder" formControlName="rudder">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="price" formControlName="price">
+        </mat-form-field>
+        <button mat-flat-button color="primary" class="carPhoto"><label class="custom-file-upload">
+          <input type="file" (change)="onFileSelected($event)"/>
+          Select photo for car
+      </label></button>
+      <span [style.color]="selectedFile===false ? 'red' : 'green'">{{selectedFile === false ? 'Upload photo for car!' : 'Photo was successfully uploaded'}}</span>
+      </mat-dialog-content>
+    <mat-dialog-actions class="btns">
+      <button mat-flat-button color="primary" (click)="sendForm()" [disabled]="myForm.invalid || !selectedFile" >Send</button>
+      <!--
+        || - is for two statements in invalid
+      -->
+      <button mat-flat-button color="primary" (click)="closeForm()">Cancel</button>
+    </mat-dialog-actions>
+  </form>

@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+* {
+    font-family: 'Goldman', sans-serif;
+    color: yellow;
+}
+
+.mat-elevation-z8 {
+    background-color: rgba(29,37,44,255);
+    width: 100%;
+}

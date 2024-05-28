@@ -1,0 +1,15 @@
+.rate{
+    color:black;
+    cursor:pointer;
+}
+.rate:hover{
+    color:red;
+}
+.rate-item{
+    float:left;
+    cursor:pointer;
+    margin:0px 15px 0px 15px;
+}
+.rate-item:hover ~ .rate-item {
+    color: black;
+}

@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="container">
+    <h1>My Test Drives:</h1>
+    <div class="results" *ngFor="let car of getAllSignUps()">
+        <div class="upper-block">
+            <div class="image">
+            <img src="../../../assets/{{car[0].image}}">
+            </div>
+            <div class="info">
+                <span>Brand: {{car[0].brand}}</span><br>
+                <span>Model: {{car[0].model}}</span><br>
+                <span>Year: {{car[0].yearOfRelease}}</span><br>
+                <span>Color: {{car[0].color}}</span><br>
+                <span>Engine: {{car[0].engine}} <span style="color: red">HP</span></span><br>
+                <span>Drive: {{car[0].drive}}</span><br>
+                <span>Rudder: {{car[0].rudder}}</span><br>
+                <span>Price: {{car[0].price}}<span style="color: green">tg</span></span><br>
+            </div>
+        </div>
+        <div class="lower-block">
+            <div class="status">
+                <span>Status:  <span *ngIf="car[1] === 'Approved'" style="color: green">{{car[1]}}</span><span *ngIf="car[1] === 'Rejected'" style="color: red">{{car[1]}}</span><span *ngIf="car[1] === 'Under consideration'" style="color: grey">{{car[1]}}</span></span>
+            </div>
+            <div class="date">
+                Date: {{car[2]}}
+            </div>
+        </div>
+    </div>
+</div>
+
