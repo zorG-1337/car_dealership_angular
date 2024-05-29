@@ -20,7 +20,7 @@ export const profileResolver: ResolveFn<any> = (
 */
 
 import { ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot } from '@angular/router';
-import { Injectable, inject } from '@angular/core';
+import { Injectable, OnInit, inject } from '@angular/core';
 import { ProfileService } from './profile.service';
 import { AuthService } from './auth.service';
 
@@ -28,10 +28,12 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 
-export class Declarations {
-  constructor(public profile: ProfileService, public auth: AuthService) {}
+export class Declarations{
+  constructor(private profile: ProfileService, private auth: AuthService) {}
 
-  info: any
+  getInfo() {
+    return this.profile.getUserInfo({email: this.profile.parseJwt(this.auth.getToken()).email})
+  }
 }
 
 export const profileResolver: ResolveFn<any> = (
@@ -41,9 +43,6 @@ export const profileResolver: ResolveFn<any> = (
 
   let declarations = inject(Declarations)
   
-  declarations.profile.getUserInfo({email: declarations.profile.parseJwt(declarations.auth.getToken()).email}).subscribe((data) => { 
-    declarations.info = data
-  })
 
-  return declarations.info
+  return declarations.getInfo()
 };

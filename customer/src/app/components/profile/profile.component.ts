@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { AuthService } from '../../services/auth.service';
 import { ProfileService } from '../../services/profile.service';
@@ -28,21 +28,29 @@ import {
 })
 export class ProfileComponent implements OnInit{
   constructor(private profile: ProfileService, private auth: AuthService, 
-    public dialog: MatDialog, private _snackBar: MatSnackBar
+    public dialog: MatDialog, private _snackBar: MatSnackBar, private route: ActivatedRoute
   ) {  }
-  user!:any
+  // user!:any
+  user:any = this.route.snapshot.data['data']
   info!: Object
-  userImage!:string
+  // userImage!:string
+  userImage:string = this.user.image === '' ? `../../../assets/1683314075_furman-top-p-pitbul-na-chernom-fone-vkontakte-60.jpg` : `../../../assets/${this.user.image}`
   selectedFile!: any
-  accessToPurchases!: boolean
+  // accessToPurchases!: boolean
+  accessToPurchases:boolean = this.user.email === 'admin123@mail.ru'
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   ngOnInit(): void {
+
+    console.log(this.route.snapshot.data['data'])
+
+
+
+    /*
     let info = {
       email: this.profile.parseJwt(this.auth.getToken()).email
     }
     this.accessToPurchases = info.email === 'admin123@mail.ru'
-    console.log(this.accessToPurchases)
     this.profile.getUserInfo(info).subscribe((data) => {
       this.user = data
       if(this.user.image === "") {
@@ -52,6 +60,7 @@ export class ProfileComponent implements OnInit{
         this.user.image = `../../../assets/${this.user.image}`
       }
     })
+    */
   }
   openDialog(): void {
     let dialogConfig = new MatDialogConfig();

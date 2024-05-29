@@ -20,11 +20,11 @@
             <span>Leave your feedback: </span>
             <div class="leaveFeedback" *ngIf="car.usersFeedback === 0">
                 <div class="rate">
-                    <div class="rate-item" (click)="leaveFeedback(1)"><i class='bx bx-star'></i></div>
-                    <div class="rate-item" (click)="leaveFeedback(2)"><i class='bx bx-star'></i></div>
-                    <div class="rate-item" (click)="leaveFeedback(3)"><i class='bx bx-star'></i></div>
-                    <div class="rate-item" (click)="leaveFeedback(4)"><i class='bx bx-star'></i></div>
-                    <div class="rate-item" (click)="leaveFeedback(5)"><i class='bx bx-star'></i></div>
+                    <div class="rate-item" (click)="openDialogToLeaveFeedback({rating: 1, carId: car._id})"><i class='bx bxs-star'></i></div>
+                    <div class="rate-item" (click)="openDialogToLeaveFeedback({rating: 2, carId: car._id})"><i class='bx bxs-star'></i></div>
+                    <div class="rate-item" (click)="openDialogToLeaveFeedback({rating: 3, carId: car._id})"><i class='bx bxs-star'></i></div>
+                    <div class="rate-item" (click)="openDialogToLeaveFeedback({rating: 4, carId: car._id})"><i class='bx bxs-star'></i></div>
+                    <div class="rate-item" (click)="openDialogToLeaveFeedback({rating: 5, carId: car._id})"><i class='bx bxs-star'></i></div>
                 </div> 
             </div>
         </div>

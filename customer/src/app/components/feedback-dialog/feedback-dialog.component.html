@@ -1,1 +1,50 @@
-<p>feedback-dialog works!</p>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<form class="thisForm" [formGroup]="myForm">
+    <h2 mat-dialog-title>Оставить отзыв</h2>
+    <mat-dialog-content class="input_fields">
+      <div class="star1" *ngIf="data === 1">
+        <span class="yourRating">Your rating: </span>
+        <i class='bx bxs-star'></i>
+      </div>
+      <div class="star1" *ngIf="data === 2">
+        <span class="yourRating">Your rating: </span>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+      </div>
+      <div class="star1" *ngIf="data === 3">
+        <span class="yourRating">Your rating: </span>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+      </div>
+      <div class="star1" *ngIf="data === 4">
+        <span class="yourRating">Your rating: </span>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+      </div>
+      <div class="star1" *ngIf="data === 5">
+        <span class="yourRating">Your rating: </span>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+      </div>
+        <mat-form-field class="example-semi-full-width">
+            <mat-label>Заголовок отзыва</mat-label>
+            <input matInput placeholder="Everything was perfect" formControlName="header">
+          </mat-form-field>
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>Введите отзыв</mat-label>
+            <textarea matInput placeholder="The car was in well conditions ..." formControlName="comment"></textarea>
+          </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions class="btns">
+        <button mat-flat-button color="primary" (click)="sendFeedback()">Add Feedback</button>
+        <button mat-flat-button color="primary" (click)="closeForm()">Cancel</button>
+    </mat-dialog-actions>
+</form>
+

@@ -1,0 +1,40 @@
+* {
+    font-family: 'Goldman', sans-serif;
+}
+
+.thisForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: 900px;
+    height: 800px;
+}
+
+.input_fields {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.example-full-width {
+    height: 600px;
+}
+
+.btns {
+    display: flex;
+    gap: 40px;
+}
+
+.star1 {
+    color: yellow;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.yourRating {
+    color: grey;
+}
